@@ -1,0 +1,14 @@
+{
+  "name": "marc.io.vn",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page marc.io.vn: truy cập nhanh các công cụ do AI Agent xây dựng",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs src 5173",
+    "test": "playwright test --trace off"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}
