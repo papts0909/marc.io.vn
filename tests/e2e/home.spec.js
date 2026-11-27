@@ -9,13 +9,13 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test('hero hiển thị tiêu đề và nút CTA', async ({ page }) => {
+test('hero shows the title and CTA', async ({ page }) => {
   await expect(page.locator('h1')).toContainText('AI Agent');
-  await expect(page.getByRole('link', { name: /Mở các công cụ/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Open the tools/ })).toBeVisible();
   expect(page.errors).toEqual([]);
 });
 
-test('mỗi công cụ có một thẻ link đúng subdomain', async ({ page }) => {
+test('each tool has a card linking to its subdomain', async ({ page }) => {
   for (const app of APPS) {
     const card = page.locator(`.app-card[data-app="${app.name}"]`);
     await expect(card).toHaveAttribute('href', app.url);
@@ -23,8 +23,8 @@ test('mỗi công cụ có một thẻ link đúng subdomain', async ({ page }) 
   }
 });
 
-test('menu mở, liệt kê công cụ và đóng bằng Esc', async ({ page }) => {
-  const btn = page.getByRole('button', { name: 'Mở menu' });
+test('menu opens, lists the tools and closes on Esc', async ({ page }) => {
+  const btn = page.getByRole('button', { name: 'Open menu' });
   await btn.click();
   const menu = page.locator('#menu');
   await expect(menu).toBeVisible();
@@ -33,12 +33,12 @@ test('menu mở, liệt kê công cụ và đóng bằng Esc', async ({ page }) 
   await expect(menu).toBeHidden();
 });
 
-test('không bị cuộn ngang', async ({ page }) => {
+test('no horizontal scroll', async ({ page }) => {
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   expect(overflow).toBeLessThanOrEqual(0);
 });
 
-test('canvas hạt được vẽ', async ({ page }) => {
+test('particle canvas is painted', async ({ page }) => {
   await page.waitForTimeout(300);
   const painted = await page.evaluate(() => {
     const c = document.querySelector('.hero-canvas');
@@ -49,7 +49,7 @@ test('canvas hạt được vẽ', async ({ page }) => {
   expect(painted).toBe(true);
 });
 
-test('trang 404 có link về trang chủ', async ({ page }) => {
+test('404 page links back home', async ({ page }) => {
   await page.goto('/404.html');
-  await expect(page.getByRole('link', { name: /Về marc.io.vn/ })).toHaveAttribute('href', '/');
+  await expect(page.getByRole('link', { name: /Back to marc.io.vn/ })).toHaveAttribute('href', '/');
 });

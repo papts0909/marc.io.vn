@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marc · Ứng dụng do AI Agent xây dựng</title>
-  <meta name="description" content="Các ứng dụng hữu ích của Marc, do AI Agent viết, GitHub Actions kiểm thử và tự động deploy từ đầu đến cuối.">
+  <title>Marc · Apps Built By AI Agents</title>
+  <meta name="description" content="Marc's helpful apps, written by AI agents, tested and deployed end-to-end with GitHub Actions.">
   <meta name="theme-color" content="#000000">
-  <meta property="og:title" content="Marc · Ứng dụng do AI Agent xây dựng">
-  <meta property="og:description" content="Truy cập nhanh MintMath, Document Tools và các công cụ khác trên marc.io.vn.">
+  <meta property="og:title" content="Marc · Apps Built By AI Agents">
+  <meta property="og:description" content="Quick access to MintMath, Document Tools and more on marc.io.vn.">
   <meta property="og:url" content="https://marc.io.vn/">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://marc.io.vn/">
@@ -20,7 +20,7 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Marc – trang chủ">
+    <a class="brand" href="#top" aria-label="Marc – home">
       <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="8.5" cy="8.5" r="5.5"/><circle cx="15.5" cy="8.5" r="5.5"/>
         <circle cx="8.5" cy="15.5" r="5.5"/><circle cx="15.5" cy="15.5" r="5.5"/>
@@ -28,19 +28,19 @@
       <span>Marc</span>
     </a>
     <span class="topbar-center">AI Agent &amp; Apps</span>
-    <button class="menu-btn" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="menu">
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
       <span></span><span></span>
     </button>
   </header>
 
   <nav id="menu" class="menu" aria-label="Menu" hidden>
     <div class="menu-inner">
-      <p class="menu-label">Công cụ</p>
+      <p class="menu-label">Tools</p>
       <ul class="menu-apps" data-app-menu></ul>
-      <p class="menu-label">Trang</p>
+      <p class="menu-label">Pages</p>
       <ul class="menu-links">
-        <li><a href="#apps">Danh sách công cụ</a></li>
-        <li><a href="#how">Cách xây dựng</a></li>
+        <li><a href="#apps">All tools</a></li>
+        <li><a href="#how">How it's built</a></li>
         <li><a href="https://github.com/papts0909" target="_blank" rel="noopener">GitHub ↗</a></li>
       </ul>
     </div>
@@ -52,20 +52,20 @@
       <div class="rails" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="hero-content">
         <h1 class="hero-title">
-          <span class="w1">Do AI Agent xây dựng,</span><br>
-          <span class="w1">Hữu</span> <span class="w2">ích</span> <span class="w3">mỗi ngày.</span>
+          <span class="w1">Built By AI Agents,</span><br>
+          <span class="w1">Made</span> <span class="w2">For</span> <span class="w3">Everyday Use.</span>
         </h1>
-        <p class="hero-sub">Ứng dụng nhỏ, hữu ích của Marc — Agent viết code, GitHub Actions kiểm thử và deploy end-to-end.</p>
-        <a class="cta" href="#apps">Mở các công cụ <span aria-hidden="true">→</span></a>
+        <p class="hero-sub">Small, helpful apps by Marc — agents write the code, GitHub Actions tests and deploys end-to-end.</p>
+        <a class="cta" href="#apps">Open the tools <span aria-hidden="true">→</span></a>
       </div>
-      <a class="orb" href="#apps">Công cụ</a>
+      <a class="orb" href="#apps">Tools</a>
     </section>
 
     <section id="apps" class="section">
       <div class="section-head">
-        <p class="eyebrow">01 — Công cụ</p>
-        <h2>Truy cập nhanh</h2>
-        <p class="lead">Mỗi công cụ chạy trên một subdomain riêng của marc.io.vn.</p>
+        <p class="eyebrow">01 — Tools</p>
+        <h2>Quick access</h2>
+        <p class="lead">Each tool lives on its own marc.io.vn subdomain.</p>
       </div>
       <div class="app-grid" data-app-grid>
         <noscript>
@@ -77,25 +77,25 @@
 
     <section id="how" class="section">
       <div class="section-head">
-        <p class="eyebrow">02 — Cách xây dựng</p>
-        <h2>Từ ý tưởng đến production</h2>
-        <p class="lead">Không ai deploy bằng tay. Mọi thay đổi đi qua cùng một đường ống.</p>
+        <p class="eyebrow">02 — How it's built</p>
+        <h2>From idea to production</h2>
+        <p class="lead">Nobody deploys by hand. Every change goes through the same pipeline.</p>
       </div>
       <ol class="steps">
         <li class="step">
           <span class="step-no">01</span>
-          <h3>AI Agent viết code</h3>
-          <p>Marc mô tả nhu cầu, Agent thiết kế, viết code và viết test cho ứng dụng.</p>
+          <h3>AI agents write the code</h3>
+          <p>Marc describes the need; an agent designs the app, writes the code and the tests.</p>
         </li>
         <li class="step">
           <span class="step-no">02</span>
-          <h3>GitHub Actions kiểm thử</h3>
-          <p>Mỗi lần push chạy unit test, E2E Playwright trên desktop lẫn mobile.</p>
+          <h3>GitHub Actions tests it</h3>
+          <p>Every push runs unit tests and Playwright end-to-end tests on desktop and mobile.</p>
         </li>
         <li class="step">
           <span class="step-no">03</span>
-          <h3>Tự động deploy</h3>
-          <p>Test xanh thì Actions đẩy lên GitHub Pages, phục vụ tại <code>*.marc.io.vn</code>.</p>
+          <h3>Automatic deploy</h3>
+          <p>Green tests ship straight to GitHub Pages, served at <code>*.marc.io.vn</code>.</p>
         </li>
       </ol>
     </section>
@@ -103,7 +103,7 @@
 
   <footer class="footer">
     <span>© <span data-year>2026</span> Marc · marc.io.vn</span>
-    <a href="https://github.com/papts0909/marc.io.vn" target="_blank" rel="noopener">Mã nguồn ↗</a>
+    <a href="https://github.com/papts0909/marc.io.vn" target="_blank" rel="noopener">Source ↗</a>
   </footer>
 </body>
 </html>

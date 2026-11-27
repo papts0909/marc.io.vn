@@ -23,8 +23,8 @@ function renderApps() {
         el('p', { class: 'app-desc' }, app.description),
         el('ul', { class: 'app-tags' }, ...app.tags.map((t) => el('li', {}, t))))),
     el('div', { class: 'app-card soon', 'aria-hidden': 'true' },
-      el('strong', {}, 'Sắp có thêm'),
-      el('span', {}, 'Công cụ tiếp theo đang được Agent xây dựng.')),
+      el('strong', {}, 'More coming'),
+      el('span', {}, 'The next tool is being built by an agent.')),
   );
 
   const menu = document.querySelector('[data-app-menu]');
@@ -39,7 +39,7 @@ function setupMenu() {
   const menu = document.getElementById('menu');
   const setOpen = (open) => {
     btn.setAttribute('aria-expanded', String(open));
-    btn.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     document.body.classList.toggle('menu-open', open);
     if (open) {
       menu.hidden = false;
