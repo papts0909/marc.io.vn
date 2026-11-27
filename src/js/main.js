@@ -1,4 +1,4 @@
-import { APPS } from './apps.js';
+import { APPS } from './apps.js?v=__BUILD__';
 
 const host = (url) => new URL(url).host;
 const el = (tag, attrs = {}, ...children) => {

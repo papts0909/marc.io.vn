@@ -42,11 +42,17 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 7
+      # Stamp the commit SHA into asset URLs so browsers fetch fresh JS/CSS after each deploy.
+      - name: Build (cache-bust assets)
+        if: github.event_name != 'pull_request'
+        run: |
+          rm -rf dist && cp -r src dist
+          grep -rl '__BUILD__' dist | xargs sed -i "s/__BUILD__/${GITHUB_SHA::8}/g"
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: src
+          path: dist
 
   deploy:
     name: Deploy GitHub Pages
