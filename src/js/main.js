@@ -1,6 +1,5 @@
 import { APPS } from './apps.js?v=__BUILD__';
 
-const host = (url) => new URL(url).host;
 const el = (tag, attrs = {}, ...children) => {
   const node = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
@@ -17,19 +16,16 @@ function renderApps() {
         el('div', { class: 'app-top' },
           el('span', {}, String(i + 1).padStart(2, '0')),
           el('span', { class: 'app-arrow', 'aria-hidden': 'true' }, '→')),
-        el('div', {},
-          el('h3', {}, app.name),
-          el('span', { class: 'app-domain' }, host(app.url))),
-        el('p', { class: 'app-desc' }, app.description),
-        el('ul', { class: 'app-tags' }, ...app.tags.map((t) => el('li', {}, t))))),
+        el('h3', {}, app.name),
+        el('p', { class: 'app-desc' }, app.description))),
     el('div', { class: 'app-card soon', 'aria-hidden': 'true' },
       el('strong', {}, 'More coming'),
-      el('span', {}, 'The next tool is being built by an agent.')),
+      el('span', {}, 'More tools on the way.')),
   );
 
   const menu = document.querySelector('[data-app-menu]');
   menu.replaceChildren(
-    ...APPS.map((app) => el('li', {}, el('a', { href: app.url, rel: 'noopener' }, app.name, el('small', {}, host(app.url))))),
+    ...APPS.map((app) => el('li', {}, el('a', { href: app.url, rel: 'noopener' }, app.name))),
   );
 }
 

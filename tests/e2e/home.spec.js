@@ -19,7 +19,7 @@ test('each tool has a card linking to its subdomain', async ({ page }) => {
   for (const app of APPS) {
     const card = page.locator(`.app-card[data-app="${app.name}"]`);
     await expect(card).toHaveAttribute('href', app.url);
-    await expect(card).toContainText(new URL(app.url).host);
+    await expect(card).toContainText(app.name);
   }
 });
 
